@@ -3,11 +3,14 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import useAuthContext from "./hooks/useAuthContext";
 
 function App() {
+  const { isAuthReady } = useAuthContext();
   return (
     <div className="App">
-      <BrowserRouter>
+      {isAuthReady ? (
+        <BrowserRouter>
         <Nav/>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
@@ -15,6 +18,7 @@ function App() {
           <Route path="/signup" element={<Signup/>}></Route>
         </Routes>
       </BrowserRouter>
+      ) : "loading..."}
     </div>
   );
 }

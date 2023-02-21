@@ -11,6 +11,11 @@ export default function useLogin() {
     const [isPending, setIsPending] = useState(false);
     const { dispatch } = useAuthContext();
 
+    // console.log(appAuth.currentUser);
+    // setInterval(() => {
+    //     console.log(appAuth.currentUser);
+    // }, 1000)
+
     const login = (email, password) => {
         setError(null);
         setIsPending(true);
