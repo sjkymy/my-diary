@@ -23,11 +23,10 @@ export default function useLogin() {
 
                 setError(null);
                 setIsPending(false);
-
                 dispatch({type: "login", payload: user});
 
                 if (!user) {
-                    throw new Error("로그인 실패")
+                    throw new Error("로그인에 실패했습니다.")
                 };
             })
             .catch((error) => {

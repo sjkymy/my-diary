@@ -12,9 +12,19 @@
     justify-content: right;
     gap: 16px;
     list-style: none;
+    align-items: center;
 }
 
 .nav a {
     text-decoration: none;
     color: #fff;
+}
+
+.nav button {
+    padding: 6px 12px;
+    border-radius: 10px;
+    background-color: teal;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
