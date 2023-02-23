@@ -9,6 +9,8 @@ export default function useSignup() {
 
     // 서버와의 통신 상태를 저장.
     const [isPending, setIsPending] = useState(false);
+
+    // 유저정보를 전역에서 활용할 수 있도록 dispatch 함수를 통해 업데이트.
     const { dispatch } = useAuthContext();
 
     const signup = (email, password, displayName) => {
@@ -31,15 +33,15 @@ export default function useSignup() {
                         setError(null);
                         setIsPending(false);
                     }).catch((error) => {
-                        console.log(error.messsage);
                         setError(error.message);
                         setIsPending(false);
+                        console.log(error.messsage);
                     });
             })
             .catch((error) => {
-                console.log(error.messsage);
                 setError(error.message);
                 setIsPending(false);
+                console.log(error.messsage);
             });
     }
 

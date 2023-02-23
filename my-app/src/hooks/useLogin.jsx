@@ -26,18 +26,18 @@ export default function useLogin() {
                 // Signed in 
                 const user = userCredential.user;
 
+                dispatch({type: "login", payload: user});
                 setError(null);
                 setIsPending(false);
-                dispatch({type: "login", payload: user});
 
                 if (!user) {
                     throw new Error("로그인에 실패했습니다.")
                 };
             })
             .catch((error) => {
-                console.log(error.messsage);
                 setError(error.message);
                 setIsPending(false);
+                console.log(error.messsage);
             });
     }
 

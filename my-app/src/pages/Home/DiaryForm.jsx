@@ -1,36 +1,45 @@
-import { useState } from "react"
+import { useState, useEffect } from 'react'
+import { useFirestore } from '../../hooks/useFirestore';
 
-export default function DiaryForm() {
-
+// uid 는 Home.js 에서 props로 전달받는 유저 아이디입니다.
+export default function DiaryForm({ uid }) {
     const [title, setTitle] = useState("");
-    const [text, setText] = useState("")
+    const [text, setText] = useState("");
+    const { addDocument, response } = useFirestore("myDiary");
 
     const handleData = (e) => {
-        if (e.target.id === "tit") {
-            setTitle(e.target.value);
-        } else if (e.target.id=== "txt") {
-            setText(e.target.value);
-        }
-    }
-
-    const handlSubmit = (e) => {
         e.preventDefault();
         console.log(title, text);
+        // userId : 작성한 유저의 아이디입니다. auth정보로부터 받아와 Home.js 에서 props 로 전달받는다..
+        addDocument({
+            uid,
+            title,
+            text
+        })
     }
 
-  return (
-    <>
-        <form onSubmit={handlSubmit}>
-            <fieldset>
-                <legend>일기 쓰기</legend>
-                <label htmlFor="tit">일기 제목</label>
-                <input type="text" id="tit" value={title} required onChange={handleData} />
+    useEffect(() => {
+        console.log("통신상태", response.success);
+        if (response.success) {
+            setTitle("");
+            setText("");
+        }
+    }, [response.success]); // response.success가 바뀔 때만 effect를 재실행합니다.
 
-                <label htmlFor="txt">일기 내용: </label>
-                <textarea type="text" id="txt" value={text} required onChange={handleData} />
-            </fieldset>
-            <button>저장하기</button>
-        </form>
-    </>
-  )
+    return (
+        <>
+            <form onSubmit={handleData}>
+                <fieldset>
+                    <legend>일기 쓰기</legend>
+                    <label htmlFor='tit'>일기 제목 : </label>
+                    <input id="tit" type='text' required onChange={(event) => setTitle(event.target.value)} value={title}></input>
+
+                    <label htmlFor='tit'>일기 내용 : </label>
+                    <textarea id="tit" type='text' required onChange={(event) => setText(event.target.value)} value={text}></textarea>
+
+                    <button type='submit'>저장하기</button>
+                </fieldset>
+            </form>
+        </>
+    )
 }

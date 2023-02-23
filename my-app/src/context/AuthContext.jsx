@@ -2,6 +2,7 @@ import { createContext, useReducer, useEffect } from "react";
 import { appAuth } from "../firebase/config";
 
 const AuthContext = createContext();
+
 const authReducer = (state, action) => {
     switch (action.type) {
         case "login":
@@ -34,6 +35,7 @@ const AuthContextProvider = ({children}) => {
     }, [])
 
     console.log(state)
+    
     return (
         <AuthContext.Provider value={{...state, dispatch}}>
             {children}

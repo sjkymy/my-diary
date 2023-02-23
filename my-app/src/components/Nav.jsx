@@ -6,6 +6,7 @@ import useAuthContext from "../hooks/useAuthContext";
 export default function Nav() {
   const {logout} = useLogout();
   const { user } = useAuthContext();
+  
   return (
     <nav className={styles.nav}>
         <h1 className={styles.tit}>두근두근 비밀일기</h1>

@@ -13,11 +13,12 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-//firstore 초기화
+// firestore 초기화
 const appFireStore = getFirestore(app);
 // firestore 인증 초기화
 const appAuth = getAuth();
-// Timestamp 초기화
-const timestamp = Timestamp;
+// timestamp 초기화
+const timeStamp = Timestamp
 
-export { getFirestore, appAuth, timestamp }
+
+export { appFireStore, appAuth, timeStamp }
