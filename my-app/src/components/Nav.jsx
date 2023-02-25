@@ -22,7 +22,7 @@ export default function Nav() {
             </>
           }
           {user && 
-            <li>
+            <li className={styles.logged}>
               <strong>환영합니다. {user.displayName}님!</strong>
               <button type="button" onClick={logout}>로그아웃</button>
             </li>

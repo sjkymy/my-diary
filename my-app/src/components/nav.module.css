@@ -13,6 +13,7 @@
     gap: 16px;
     list-style: none;
     align-items: center;
+    padding: 0;
 }
 
 .list_nav a {
@@ -35,7 +36,16 @@
 }
 
 @media (max-width: 760px) {
+    .nav {
+        padding: 20px 10px 10px;
+    }
+
     .tit {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .list_nav .logged {
+        font-size: 14px;
     }
 }
