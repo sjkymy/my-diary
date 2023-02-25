@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useFirestore } from '../../hooks/useFirestore';
 
-// uid 는 Home.js 에서 props로 전달받는 유저 아이디입니다.
+// uid 는 Home.js 에서 props로 전달받는 유저 아이디.
 export default function DiaryForm({ uid }) {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
@@ -10,13 +10,8 @@ export default function DiaryForm({ uid }) {
     const handleData = (e) => {
         e.preventDefault();
         console.log(title, text);
-        // userId : 작성한 유저의 아이디입니다. auth정보로부터 받아와 Home.js 에서 props 로 전달받는다..
-        addDocument({
-            uid,
-            title,
-            text
-        })
-    }
+        addDocument({ uid, title, text })
+    };
 
     useEffect(() => {
         console.log("통신상태", response.success);
