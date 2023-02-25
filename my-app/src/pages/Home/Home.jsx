@@ -14,6 +14,7 @@ export default function Home() {
         <DiaryForm uid={user.uid} />
       </aside>
       <ul className={styles.content_list}>
+        <h2>일기 목록</h2>
         {error && <strong>{error}</strong>}
         {documents && <DiaryList diaries={documents} />}
       </ul>

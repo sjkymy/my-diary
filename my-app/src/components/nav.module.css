@@ -15,8 +15,12 @@
     align-items: center;
 }
 
-.nav a {
+.list_nav a {
     text-decoration: none;
+    color: #fff;
+}
+
+.list_nav strong {
     color: #fff;
 }
 
@@ -26,6 +30,12 @@
     border-radius: 10px;
     background-color: teal;
     border: none;
-    color: white;
+    color: #fff;
     cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .tit {
+        font-size: 1.5rem;
+    }
 }
