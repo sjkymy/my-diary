@@ -24,17 +24,17 @@ export default function Signup() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.signup_form} onSubmit={handleSubmit}>
       <fieldset>
         <legend>회원가입</legend>
-        <label htmlFor="myEmail">email : </label>
-        <input type="email" id="myEmail" value={email} onChange={handleData} required/>
+        <label htmlFor="myEmail">email</label>
+        <input type="email" id="myEmail" value={email} onChange={handleData} placeholder="이메일 주소를 입력해주세요." required/>
 
-        <label htmlFor="myPw">비밀번호 : </label>
-        <input type="password" id="myPw" value={password} onChange={handleData} required/>
+        <label htmlFor="myPw">비밀번호</label>
+        <input type="password" id="myPw" value={password} onChange={handleData} placeholder="비밀번호를 설정해주세요." required/>
 
-        <label htmlFor="myName">닉네임 : </label>
-        <input type="text" id="myName" value={displayName} onChange={handleData} required/>
+        <label htmlFor="myName">닉네임</label>
+        <input type="text" id="myName" value={displayName} onChange={handleData} placeholder="닉네임을 설정해주세요." required/>
 
         <button>회원가입</button>
       </fieldset>

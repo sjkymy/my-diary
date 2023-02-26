@@ -32,15 +32,16 @@ export default function Login() {
     <form className={styles.login_form} onSubmit={handleSubmit}>
       <fieldset>
         <legend>로그인</legend>
-        <label htmlFor="myEmail">이메일 : </label>
+        <label htmlFor="myEmail">이메일</label>
         <input type="email" id="myEmail" ref={emailInp} value={email} onChange={handleData} required/>
 
-        <label htmlFor="myPw">비밀번호 : </label>
+        <label htmlFor="myPw">비밀번호</label>
         <input type="password" id="myPw" value={password} onChange={handleData} required/>
 
-        {!isPending && <button disabled={isBtnDisable} type="submit" className={styles.btn}>로그인</button>}
         {isPending && <strong>로그인이 진행중입니다...</strong>}
-        {error && <strong>{error}</strong>}
+        {error && <strong className={styles.errMsg}>* 이메일 또는 비밀번호가 일치하지 않습니다.</strong>}
+
+        {!isPending && <button disabled={isBtnDisable} type="submit" className={styles.btn}>로그인</button>}
       </fieldset>
     </form>
   )
