@@ -20,12 +20,9 @@
     font-weight: bold;
 }
 
-.login_form label {
-    color: rgb(118, 118, 118);
-} 
-
 .login_form input {
-    margin: 10px 0 30px;
+    margin: 20px 0 40px;
+    padding: 0 0 5px;
     border: none;
     border-bottom: 1px solid rgb(219, 219, 219);
 }

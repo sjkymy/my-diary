@@ -5,7 +5,7 @@
 }
 
 .signup_form fieldset {
-    height: 400px;
+    height: 470px;
     display: flex;
     flex-direction: column;
     padding: 0 40px;
@@ -20,12 +20,9 @@
     font-weight: bold;
 }
 
-.signup_form label {
-    color: rgb(118, 118, 118);
-}    
-
 .signup_form input {
     margin: 20px 0 40px;
+    padding: 0 0 5px;
     border: none;
     border-bottom: 1px solid rgb(219, 219, 219);
 }
@@ -46,6 +43,9 @@
     font-weight: bold;
     cursor: pointer;
 }
-:disabled {
-    opacity: 0.4;
-};
+
+@media (max-width: 760px) {
+    .signup_form fieldset {
+        padding: 0 10px;
+    }
+}

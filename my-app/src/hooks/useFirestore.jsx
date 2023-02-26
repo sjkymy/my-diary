@@ -46,7 +46,7 @@ export const useFirestore = (transaction) => {
             // 전개 구문은 어떤 데이터가 들어가든 반영 가능
             // addDoc : collection에 문서를 추가한다.
             const docRef = await addDoc(colRef, { ...doc, createdTime });
-            console.log(docRef);
+            // console.log(docRef);
             dispatch({ type: 'addDoc', payload: docRef });
         } catch (error) {
             dispatch({ type: 'error', payload: error.message });

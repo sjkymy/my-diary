@@ -16,7 +16,7 @@ useEffect(() => {
         (snapshot) => {
             let result = [];
             snapshot.docs.forEach((doc) => {
-                console.log(doc.data());
+                // console.log(doc.data());
                 result.push({...doc.data(), id: doc.id});
             })
             setDocuments(result);

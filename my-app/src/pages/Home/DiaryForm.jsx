@@ -9,12 +9,12 @@ export default function DiaryForm({ uid }) {
 
     const handleData = (e) => {
         e.preventDefault();
-        console.log(title, text);
+        // console.log(title, text);
         addDocument({ uid, title, text })
     };
 
     useEffect(() => {
-        console.log("통신상태", response.success);
+        // console.log("통신상태", response.success);
         if (response.success) {
             setTitle("");
             setText("");
