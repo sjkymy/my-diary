@@ -1,13 +1,17 @@
 import axios from "axios";
 import styled from "styled-components";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import weatherDescKo from "./weatherDescKo";
 
 export default function Weather() {
     
     const [location, setLocation] = useState("")
     const [result, setResult] = useState({});
+    const [atmosphere, setAtmosphere] = useState("")
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=3bee6a724f0b498cb3d4d5c31365533a`
+
+    
+    
     
   const todayWeather = async (e) => {
     try {
@@ -15,18 +19,30 @@ export default function Weather() {
             method: "get",
             url: url
         })
-        console.log(data);
+        // console.log(data);
         setResult(data);
+        setAtmosphere(data.data.weather[0].id)
     }
     catch (err) {
-        console.log(err);
+        console.log(err.message);
     }
   }
 
   useEffect(() => {
     todayWeather();
   }, [location])
-  
+
+    // const trans = weatherDescKo().forEach((v) => {
+    //     if (atmosphere === Object.keys(v).toString()) (
+    //         Object.values(v).toString()
+    //     )
+    // })
+
+    // if (atmosphere === weatherDescKo().forEach((v) => {
+    //     Object.keys(v).toString()
+    // })) {
+    //     return Object.values(v).toString()
+    // }
 
   return (
     <AppWrap>
@@ -49,7 +65,10 @@ export default function Weather() {
                 <div className="temperature">
                     {Math.round(((result.data.main.temp - 273.15) * 10)) / 10}도
                 </div>
-                <div className="sky">{result.data.weather[0].main}</div>
+                <div className="sky">
+                    {atmosphere}
+                    {/* {result.data.weather[0].id} */}
+                </div>
             </ResultWrap>
         )}
         
