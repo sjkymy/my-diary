@@ -1,16 +1,16 @@
-import styles from "./nav.module.css"
 import { Link } from "react-router-dom"
 import useLogout from "../hooks/useLogout"
 import useAuthContext from "../hooks/useAuthContext";
+import { NavTop, Title, ListNav, Button } from "./nav.style";
 
 export default function Nav() {
   const {logout} = useLogout();
   const { user } = useAuthContext();
   
   return (
-    <nav className={styles.nav}>
-        <h1 className={styles.tit}>나의 다이어리</h1>
-        <ul className={styles.list_nav}>
+    <NavTop>
+        <Title>나의 다이어리</Title>
+        <ListNav>
           {!user &&
             <>
               <li>
@@ -22,13 +22,13 @@ export default function Nav() {
             </>
           }
           {user && 
-            <li className={styles.logged}>
+            <li className="logged">
               <strong>환영합니다. {user.displayName}님!</strong>
-              <button type="button" onClick={logout}>로그아웃</button>
+              <Button type="button" onClick={logout}>로그아웃</Button>
             </li>
           }
           
-        </ul>
-    </nav>
+        </ListNav>
+    </NavTop>
   )
 }
