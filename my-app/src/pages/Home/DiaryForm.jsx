@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useFirestore } from '../../hooks/useFirestore';
+import { Form, InpTitle, Textarea, SaveBtn } from './diaryForm.style';
 
 // uid 는 Home.js 에서 props로 전달받는 유저 아이디.
 export default function DiaryForm({ uid }) {
@@ -23,18 +24,18 @@ export default function DiaryForm({ uid }) {
 
     return (
         <>
-            <form onSubmit={handleData}>
+            <Form onSubmit={handleData}>
                 <fieldset>
                     <legend>일기 쓰기</legend>
-                    <label htmlFor='tit'>일기 제목 : </label>
-                    <input id="tit" type='text' required onChange={(event) => setTitle(event.target.value)} value={title}></input>
+                    <label htmlFor='tit'>일기 제목</label>
+                    <InpTitle id="tit" type='text' required onChange={(event) => setTitle(event.target.value)} value={title}></InpTitle>
 
-                    <label htmlFor='tit'>일기 내용 : </label>
-                    <textarea id="tit" type='text' required onChange={(event) => setText(event.target.value)} value={text}></textarea>
+                    <label htmlFor='tit'>일기 내용</label>
+                    <Textarea id="tit" type='text' required onChange={(event) => setText(event.target.value)} value={text}></Textarea>
 
-                    <button type='submit'>저장하기</button>
+                    <SaveBtn type='submit'>저장하기</SaveBtn>
                 </fieldset>
-            </form>
+            </Form>
         </>
     )
 }

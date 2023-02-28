@@ -9,7 +9,7 @@ export default function Nav() {
   
   return (
     <NavTop>
-        <Title>나의 다이어리</Title>
+        <Title>나의 하루일기</Title>
         <ListNav>
           {!user &&
             <>

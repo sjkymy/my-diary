@@ -1,9 +1,10 @@
-import styles from "./Home.module.css";
+// import styles from "./Home.module.css";
 import DiaryForm from "./DiaryForm";
 import useAuthContext from "../../hooks/useAuthContext";
 import useCollection from "../../hooks/useCollection";
 import DiaryList from "./DiaryList";
 import Weather from "../../components/Weather";
+import { Main, ContentList, ContentListTit } from "./home.style";
 
 export default function Home() {
   const {user} = useAuthContext();
@@ -12,16 +13,16 @@ export default function Home() {
   return (
     <>
       <Weather/>
-      <main className={styles.cont}>
-        <aside className={styles.side_menu}>
+      <Main>
+        <aside>
           <DiaryForm uid={user.uid} />
         </aside>
-        <ul className={styles.content_list}>
-          <h2>일기 목록</h2>
+        <ContentList>
+          <ContentListTit>일기 목록</ContentListTit>
           {error && <strong>{error}</strong>}
           {documents && <DiaryList diaries={documents} />}
-        </ul>
-      </main>
+        </ContentList>
+      </Main>
     </>
   )
 }
