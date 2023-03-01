@@ -8,7 +8,7 @@ export default function Weather() {
     const [location, setLocation] = useState("");
     const [result, setResult] = useState({});
     const [atmosphere, setAtmosphere] = useState("");
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=3bee6a724f0b498cb3d4d5c31365533a`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
     
   const todayWeather = async (e) => {
     try {
@@ -16,7 +16,6 @@ export default function Weather() {
             method: "get",
             url: url
         })
-        console.log(data);
         setResult(data);
         setAtmosphere(data.data.weather[0].main)
     } catch (err) {
