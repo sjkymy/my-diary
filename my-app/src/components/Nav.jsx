@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import useLogout from "../hooks/useLogout"
 import useAuthContext from "../hooks/useAuthContext";
-import { NavTop, Title, ListNav, Button } from "./nav.style";
+import { NavTop, Title, SubTitle, ListNav, Button } from "./nav.style";
 
 export default function Nav() {
   const {logout} = useLogout();
@@ -10,6 +10,7 @@ export default function Nav() {
   return (
     <NavTop>
         <Title>나의 하루일기</Title>
+        <SubTitle>여러분의 하루를 기록해보세요</SubTitle>
         <ListNav>
           {!user &&
             <>

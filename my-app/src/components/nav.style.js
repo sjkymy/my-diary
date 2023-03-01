@@ -16,6 +16,13 @@ export const Title = styled.h1 `
     }
 `
 
+export const SubTitle = styled.p `
+    color: #fff;
+    @media (max-width: 760px) {
+        text-align: center;
+    }
+`
+
 export const ListNav = styled.ul `
     display: flex;
     justify-content: right;
