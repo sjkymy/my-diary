@@ -1,6 +1,7 @@
 import { useState } from "react"
 import useSignup from "../../hooks/useSignup";
-import styles from "./signup.module.css"
+import { SignupForm, InpSignup, BtnSignup } from "./signup.style";
+
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -24,20 +25,20 @@ export default function Signup() {
   }
 
   return (
-    <form className={styles.signup_form} onSubmit={handleSubmit}>
+    <SignupForm onSubmit={handleSubmit}>
       <fieldset>
         <legend>회원가입</legend>
-        <label htmlFor="myEmail">email</label>
-        <input type="email" id="myEmail" value={email} onChange={handleData} placeholder="이메일 주소를 입력해주세요." required/>
+        <label htmlFor="myEmail">이메일 주소</label>
+        <InpSignup type="email" id="myEmail" value={email} onChange={handleData} placeholder="이메일 주소를 입력해주세요." required/>
 
         <label htmlFor="myPw">비밀번호</label>
-        <input type="password" id="myPw" value={password} onChange={handleData} placeholder="비밀번호를 설정해주세요." required/>
+        <InpSignup type="password" id="myPw" value={password} onChange={handleData} placeholder="비밀번호를 설정해주세요." required/>
 
         <label htmlFor="myName">닉네임</label>
-        <input type="text" id="myName" value={displayName} onChange={handleData} placeholder="닉네임을 설정해주세요." required/>
+        <InpSignup type="text" id="myName" value={displayName} onChange={handleData} placeholder="닉네임을 설정해주세요." required/>
 
-        <button>회원가입</button>
+        <BtnSignup>회원가입</BtnSignup>
       </fieldset>
-    </form>
+    </SignupForm>
   )
 }

@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react"
 import useLogin from "../../hooks/useLogin";
-import styles from "./login.module.css"
+import { LoginForm, InpLogin, BtnLogin } from "./login.style";
+
 
 export default function Login() {
   const emailInp = useRef(null);
@@ -29,20 +30,20 @@ export default function Login() {
   }
 
   return (
-    <form className={styles.login_form} onSubmit={handleSubmit}>
+    <LoginForm onSubmit={handleSubmit}>
       <fieldset>
         <legend>로그인</legend>
         <label htmlFor="myEmail">이메일</label>
-        <input type="email" id="myEmail" ref={emailInp} value={email} onChange={handleData} required/>
+        <InpLogin type="email" id="myEmail" ref={emailInp} value={email} onChange={handleData} required/>
 
         <label htmlFor="myPw">비밀번호</label>
-        <input type="password" id="myPw" value={password} onChange={handleData} required/>
+        <InpLogin type="password" id="myPw" value={password} onChange={handleData} required/>
 
         {isPending && <strong>로그인이 진행중입니다...</strong>}
-        {error && <strong className={styles.errMsg}>* 이메일 또는 비밀번호가 일치하지 않습니다.</strong>}
+        {error && <strong>* 이메일 또는 비밀번호가 일치하지 않습니다.</strong>}
 
-        {!isPending && <button disabled={isBtnDisable} type="submit" className={styles.btn}>로그인</button>}
+        {!isPending && <BtnLogin disabled={isBtnDisable} type="submit">로그인</BtnLogin>}
       </fieldset>
-    </form>
+    </LoginForm>
   )
 }
