@@ -11,7 +11,7 @@ export const NavTop = styled.nav `
 export const Title = styled.h1 `
     color: #fff;
     @media (max-width: 760px) {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         text-align: center;
     }
 `
