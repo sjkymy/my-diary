@@ -23,3 +23,15 @@
 ---
 
 ## 2. 페이지 미리보기(Preview)
+<figure>
+  <figcaption>홈 화면</figcaption>
+  <img src="https://user-images.githubusercontent.com/112460273/224097974-3902f293-4f3a-4695-84f7-d4139911a0f8.png" width="30%" />
+</figure>
+<figure>
+  <figcaption>로그인 화면</figcaption>
+  <img src="https://user-images.githubusercontent.com/112460273/224098175-655b5d2a-6af9-4e60-a101-4a78f49ce5e4.png" width="30%" />
+</figure>
+<figure>
+  <figcaption>로그아웃 화면</figcaption>
+  <img src="https://user-images.githubusercontent.com/112460273/224098328-a3285eb7-bc93-4937-8f9b-fccf69a871ac.png" width="30%" />
+</figure>
