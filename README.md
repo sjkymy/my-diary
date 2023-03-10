@@ -35,3 +35,10 @@
   <figcaption>로그아웃 화면</figcaption>
   <img src="https://user-images.githubusercontent.com/112460273/224098328-a3285eb7-bc93-4937-8f9b-fccf69a871ac.png" width="30%" />
 </figure>
+
+---
+
+## 트러블 슈팅
+일기 목록에 자동적으로 작성한 시간을 입력하고 싶었다.
+
+Home.jsx에서 일기 목록에 documents라는 이름으로 props를 뿌려준다. documents를 콘솔에 찍어봤다.
